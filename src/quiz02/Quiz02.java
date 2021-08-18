@@ -1,12 +1,41 @@
-package day13_Constructor_Inheritance;
+package quiz02;
 
 import java.util.*;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-class Win7 {
+class TimerQuiz{
+	private Date date;
+	private SimpleDateFormat simpl;
+	
+	public void setDate() {
+		//this.date = date;
+		date = new Date();
+		simpl = new SimpleDateFormat("yyyy년 MM월 dd일 aa hh시 mm분 ss초");
+	}
+	public String getDate() {
+		return simpl.format(date);
+	}
+
+	public void time() {
+		for(int i=0; i<10; i++) {
+			setDate();
+			String s = getDate();
+			System.out.println(s);
+			try {
+				Thread.sleep(1000);
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+	
+}
+class Win7 extends TimerQuiz {
 	private HashMap hm;
 
 
@@ -69,11 +98,13 @@ class Login extends Win7{
 }
 
 
-public class Quiz01 {
+public class Quiz02 {
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		int num=0,result=0; String inputId=null,inputPw=null;
 		Login lo = new Login(); boolean flag=true;
+		
+		lo.time();
 		while(flag){
 			System.out.print("1.로그인  2.가 입  3.로그아웃 \n>>>"); num = input.nextInt();
 			switch(num){

@@ -26,7 +26,7 @@ public class Ex01_Constructor {
 		 - 반환타입은 없어야 된다
 		 */
 		Constructor01 con = new Constructor01("생성자");
-		Constructor01 con = new Constructor01();
+		Constructor01 con01 = new Constructor01();
 		con.test("테스트"); //메소드 오버로딩
 		con.test(); //메소드 오버로딩
 	}
